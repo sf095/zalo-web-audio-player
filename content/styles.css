@@ -1,0 +1,241 @@
+/* Zalo Web Online Audio Player - Stylesheet */
+
+/* Audio Player Container inside File Message */
+.zap-player-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.zap-player-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 104, 255, 0.06);
+  border: 1px solid rgba(0, 104, 255, 0.15);
+  border-radius: 12px;
+  padding: 8px 12px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.zap-player-card:hover {
+  background: rgba(0, 104, 255, 0.09);
+  border-color: rgba(0, 104, 255, 0.25);
+}
+
+/* Play/Pause Button */
+.zap-play-btn {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #0068ff;
+  border: none;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 104, 255, 0.3);
+  transition: transform 0.15s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  padding: 0;
+}
+
+.zap-play-btn:hover {
+  background: #0055d6;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 104, 255, 0.4);
+}
+
+.zap-play-btn:active {
+  transform: scale(0.95);
+}
+
+.zap-play-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* Spinner for loading state */
+.zap-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: zap-spin 0.8s linear infinite;
+}
+
+@keyframes zap-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Center Content: Seeker & Times */
+.zap-track-section {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 0;
+  gap: 4px;
+}
+
+.zap-time-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #65676b;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 500;
+  user-select: none;
+}
+
+/* Custom Audio Seeker Slider */
+.zap-seeker {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #d8e2ef;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+  transition: height 0.15s ease;
+}
+
+.zap-seeker:hover {
+  height: 8px;
+}
+
+.zap-seeker::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #0068ff;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: transform 0.1s ease;
+}
+
+.zap-seeker::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+}
+
+.zap-seeker::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #0068ff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Right Controls: Speed & Volume */
+.zap-controls-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.zap-speed-btn {
+  background: rgba(0, 104, 255, 0.1);
+  border: 1px solid rgba(0, 104, 255, 0.2);
+  color: #0068ff;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 3px 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.zap-speed-btn:hover {
+  background: #0068ff;
+  color: #ffffff;
+}
+
+.zap-vol-btn {
+  background: transparent;
+  border: none;
+  color: #65676b;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.zap-vol-btn:hover {
+  color: #0068ff;
+  background: rgba(0, 104, 255, 0.08);
+}
+
+.zap-vol-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* Quick Play Overlay on existing File Thumbnail */
+.zap-thumb-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 104, 255, 0.85);
+  border-radius: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 5;
+}
+
+.file-tit-box:hover .zap-thumb-overlay {
+  opacity: 1;
+}
+
+/* Dark Mode Theme Support */
+@media (prefers-color-scheme: dark) {
+  body.dark .zap-player-card,
+  html[data-theme="dark"] .zap-player-card {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  body.dark .zap-time-row,
+  html[data-theme="dark"] .zap-time-row {
+    color: #a0a0a5;
+  }
+
+  body.dark .zap-seeker,
+  html[data-theme="dark"] .zap-seeker {
+    background: #3a3b3c;
+  }
+
+  body.dark .zap-vol-btn,
+  html[data-theme="dark"] .zap-vol-btn {
+    color: #a0a0a5;
+  }
+}

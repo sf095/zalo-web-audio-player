@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zalo Audio Player</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <div class="popup-header">
+      <div class="header-logo">
+        <svg viewBox="0 0 24 24" class="logo-icon">
+          <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+        </svg>
+      </div>
+      <div class="header-text">
+        <h3>Zalo Audio Player</h3>
+        <p class="status-indicator"><span class="dot"></span> Đang hoạt động</p>
+      </div>
+    </div>
+
+    <!-- Toggle Switch -->
+    <div class="setting-card">
+      <div class="setting-info">
+        <span class="setting-title">Bật trình phát trực tuyến</span>
+        <span class="setting-desc">Phát file ghi âm & âm thanh ngay trong chat</span>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="toggle-enabled" checked>
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <!-- Speed Preference -->
+    <div class="setting-card">
+      <div class="setting-info">
+        <span class="setting-title">Tốc độ phát mặc định</span>
+        <span class="setting-desc">Chọn tốc độ khi phát file mới</span>
+      </div>
+      <select id="default-speed" class="speed-select">
+        <option value="1">1x</option>
+        <option value="1.25">1.25x</option>
+        <option value="1.5">1.5x</option>
+        <option value="2">2x</option>
+      </select>
+    </div>
+
+    <!-- Supported Formats -->
+    <div class="formats-section">
+      <span class="formats-title">Định dạng hỗ trợ:</span>
+      <div class="formats-badges">
+        <span class="badge highlight">.m4a</span>
+        <span class="badge highlight">.mp3</span>
+        <span class="badge highlight">.wav</span>
+        <span class="badge">.aac</span>
+        <span class="badge">.ogg</span>
+        <span class="badge">.flac</span>
+        <span class="badge">.opus</span>
+        <span class="badge">.weba</span>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="popup-footer">
+      <a href="https://chat.zalo.me" target="_blank" class="open-zalo-btn">
+        Mở Zalo Web &rarr;
+      </a>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
