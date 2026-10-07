@@ -50,7 +50,7 @@ Bạn có thể cài đặt tiện ích này trên máy tính sử dụng hệ �
 - **Cách 1 (Tải file ZIP)**: Tải toàn bộ thư mục tiện ích về máy dưới dạng `.zip`, sau đó giải nén ra một thư mục cố định trên máy tính (ví dụ lưu tại: `Documents/Zalo chrome ext` hoặc `Desktop/Zalo chrome ext`).
 - **Cách 2 (Dành cho lập trình viên - Git Clone)**:
   ```bash
-  git clone https://github.com/sfone095/zalo-web-audio-player.git
+  git clone https://github.com/sf095/zalo-web-audio-player.git
   ```
 
 > [!IMPORTANT]
